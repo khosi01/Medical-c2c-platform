@@ -37,46 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
       fields.forEach((f) => {
         combinedCode += f.value;
       });
-
       finalInput.value = combinedCode;
       form.submit();
     });
   }
 });
-
-function startTimer(duration, display) {
-  let timer = duration,
-    minutes,
-    seconds;
-  const resendLink = document.getElementById("resend-link");
-
-  const interval = setInterval(function () {
-    minutes = parseInt(timer / 60, 10);
-    seconds = parseInt(timer % 60, 10);
-
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-
-    display.textContent = minutes + ":" + seconds;
-
-    if (--timer < 0) {
-      clearInterval(interval);
-      resendLink.innerHTML = "Send a new OTP code";
-      resendLink.style.color = "var(--primary-teal)";
-      resendLink.style.pointerEvents = "auto";
-      resendLink.style.fontWeight = "600";
-      resendLink.href = "resend-otp.php";
-    }
-  }, 1000);
-}
-
-window.onload = function () {
-  const display = document.querySelector("#timer");
-  if (display) {
-    const twoMinutes = 119;
-    startTimer(twoMinutes, display);
-  }
-};
 
 //inactvity
 let inactivityTimer;

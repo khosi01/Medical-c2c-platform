@@ -6,8 +6,3 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: /medical-c2c-platform/auth/login.php?redirect=" . urlencode($currentUrl));
     exit();
 }
-$adminRoles = ['admin', 'it', 'marketing', 'support'];
-if (in_array($_SESSION['user_role'] ?? '', $adminRoles)) {
-    header("Location: /medical-c2c-platform/admin/dashboard.php");
-    exit();
-}

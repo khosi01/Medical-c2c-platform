@@ -1,0 +1,261 @@
+.admin-burger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text, #0d2e32);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 6px 8px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 998;
+}
+.sidebar-overlay.show {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  /* Sidebar — slide off screen */
+  .sidebar {
+    transform: translateX(-100%) !important;
+    transition: transform 0.25s ease !important;
+    z-index: 999 !important;
+    position: fixed !important;
+  }
+  .sidebar.open {
+    transform: translateX(0) !important;
+  }
+
+  /* Main*/
+  .main {
+    margin-left: 0 !important;
+  }
+
+  /* Topbar */
+  .topbar {
+    padding: 0 16px !important;
+    gap: 8px;
+  }
+  .admin-burger {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  .admin-info {
+    display: none !important;
+  }
+  .topbar-title span {
+    display: none !important;
+  }
+
+  /* Metric grids */
+  .metric-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Bottom grid */
+  .bottom-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Roles page two-column layout */
+  .perm-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Role overview cards*/
+  .perm-grid > div:first-child {
+    order: 1;
+  }
+  .perm-grid > div:last-child {
+    order: 2;
+  }
+
+  /* Page header stack */
+  .page-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  /* Table controls wrap */
+  .table-controls {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    padding: 12px 16px !important;
+  }
+  .search-wrap {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+  .f-select {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  /* Tables scrollable */
+  .card {
+    overflow-x: auto;
+  }
+  .data-table {
+    min-width: 580px;
+  }
+
+  div[style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  div[style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  div[style*="grid-template-columns:repeat(5,1fr)"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Content padding */
+  .content {
+    padding: 20px 16px !important;
+  }
+
+  /* Modal */
+  .modal-box {
+    margin: 16px !important;
+    padding: 24px 20px !important;
+    max-height: 85vh !important;
+  }
+}
+@media (max-width: 767px) {
+  /* Metric grid */
+  .metric-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Inline metric cards */
+  div[style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  div[style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  div[style*="grid-template-columns:repeat(5,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Topbar title */
+  .topbar-title {
+    font-size: 0.88rem !important;
+  }
+
+  .admin-info {
+    display: none !important;
+  }
+  .topbar-right {
+    gap: 8px !important;
+  }
+
+  /* Card header stack */
+  .card-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    padding: 14px 16px !important;
+  }
+
+  /* Table controls full column */
+  .table-controls {
+    flex-direction: column !important;
+    padding: 10px 14px !important;
+  }
+  .f-select {
+    width: 100% !important;
+  }
+
+  /* Roles page perm-grid */
+  .perm-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Role cards wrap on mobile */
+  div[style*="grid-template-columns:repeat(5,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  /* Content padding */
+  .content {
+    padding: 14px 12px !important;
+  }
+
+  /* Modal full width */
+  .modal-overlay {
+    padding: 0 !important;
+    align-items: flex-end !important;
+  }
+  .modal-box {
+    border-radius: 20px 20px 0 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 90vh !important;
+    padding: 24px 20px !important;
+  }
+
+  /* Dashboard page header */
+  .page-header h1 {
+    font-size: 1.25rem !important;
+  }
+  .page-header p {
+    font-size: 0.8rem !important;
+  }
+
+  /* Notif button */
+  .notif-btn {
+    padding: 4px !important;
+    font-size: 1.1rem !important;
+  }
+
+  /* Dropdown menu position */
+  .admin-avatar {
+    position: static !important;
+  }
+  .dropdown-menu {
+    right: 12px !important;
+    top: 58px !important;
+    position: fixed !important;
+  }
+}
+@media (max-width: 767px) {
+  .wrap {
+    margin: 20px auto !important;
+    padding: 0 16px !important;
+  }
+  .wrap .card {
+    padding: 20px !important;
+    overflow-x: unset !important;
+    min-width: unset !important;
+  }
+}
+@media (max-width: 1024px) {
+  .table-scroll-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+@media (min-width: 1025px) {
+  .admin-burger {
+    display: none !important;
+  }
+  .sidebar-overlay {
+    display: none !important;
+  }
+}
